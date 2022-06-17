@@ -1,0 +1,104 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+body{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(4, 13, 34);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -3;
+}
+.background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+#bgimg{
+  position: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.wrapper{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  top: 25%;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.eventos{
+  width: 100%;
+  height: auto;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+}
+
+.cadinput{
+  margin-top: 10px;
+  padding: 16px 24px;
+  font-size: 18px;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 16px;
+  height: inherit;
+  width: 50%;
+  background-color: #fff;
+  color: #8193B2;
+  border: 1px;
+  border-radius: 10px;
+  flex-grow: 2;
+}
+
+.entryButtons{
+  width: 100%;
+  display:flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: middle;
+}
+
+.btncad{
+  margin-top: 10px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 16px;
+  background-color: grey;
+  color: #fff;
+  border-radius: 10px;
+  align-self:auto;
+  width:min-content;
+}
+
+
+.erro{
+  background-color: #8193B2;
+  flex-grow: 1;
+}
+
+.displaynone{
+  display: none;
+}

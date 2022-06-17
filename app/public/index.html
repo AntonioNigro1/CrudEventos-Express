@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="background">
+    <img src="./sources/bgImg.jpg" id="bgimg" alt="imagem de fundo">
+  </div>
+
+  <div class="wrapper">
+    <h1 class="eventos">Entre ou cadastre-se para ver Eventos</h1>
+    <form class="signinbox">
+      <input class="emailinput" placeholder="Endereço de Email" type="email" id="user_email" name="user_email" />
+      <input class="senhainput" placeholder="Senha" type="password" id="user_password" name="user_senha" />
+    </form>
+    <div class="entryButtons">
+      <button class="signin" onclick="location.href=''">Entrar</button>
+      <button class="signup" onclick="location.href='/cadastro'">Cadastrar</button>
+      <p id="erro" class="erro displaynone"></p>
+    </div>
+  </div>
+</body>
+
+</html>
