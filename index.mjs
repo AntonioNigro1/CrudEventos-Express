@@ -1,32 +1,42 @@
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
+import mongoose from 'mongoose';
+import morgan from 'morgan';
 import path from 'path';
-import cors from 'cors';
-import { fileURLToPath } from 'url';
-
-import Cad_Router from './app/route/Cad_Router.mjs'
-import Ent_Router from './app/route/Ent_Router.mjs'
+import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url);
 const router = express.Router();
 const __dirname = path.dirname(__filename);
 
-const port = 3000;
+dotenv.config();
+
+//Conectar ao Banco de Dados
+mongoose.connect(process.env.DB_CONNECT,
+  { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+    console.log('Connection established on MongoDB Cloud');
+  }
+);
 
 // Main App
 var app = express();
 
-app.set('view engine', 'hbs');
-app.set('view', './app/view');
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./app/public'));
+app.use(cookieParser());
+app.use(morgan('tiny'));
 app.use(cors());
 
 //rotas
-app.use('/', Ent_Router);
-app.use('/', Cad_Router);
-
+/*
+app.use('/Entrar', Ent_Router);
+app.use('/Cadastrar', Cad_Router);
+app.use('/Eventos', Event_Router);
+*/
 //criação do servidor
-http.createServer(app).listen(port);
+const PORT = process.env.PORT || 3000;
+http.createServer(app).listen(PORT);

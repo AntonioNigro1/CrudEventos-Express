@@ -34,13 +34,37 @@ body{
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
-  top: 25%;
+  height: 100%;
   z-index: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
   vertical-align: middle;
+}
+
+.menu{
+  position: relative;
+  width: 100%;
+  height: 10%;
+  border: 50px;
+  border-radius: 5px;
+  border-color: black;
+  z-index: 2;
+  
+}
+
+.btnmenu{
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 16px;
+  background-color: grey;
+  color: #fff;
+  border-radius: 10px;
+  align-self:auto;
+  width:min-content;
 }
 
 .eventos{
@@ -57,23 +81,8 @@ body{
   flex-grow: 2;
 }
 
-.emailinput{
-  margin-top: 10px;
-  padding: 16px 24px;
-  font-size: 18px;
-  text-align: left;
-  vertical-align: middle;
-  line-height: 16px;
-  height: inherit;
-  width: 50%;
-  background-color: #fff;
-  color: #8193B2;
-  border: 1px;
-  border-radius: 10px;
-  flex-grow: 2;
-}
 
-.senhainput{
+.inputs{
   margin-top: 10px;
   padding: 16px 24px;
   font-size: 18px;
@@ -90,16 +99,17 @@ body{
 }
 
 .entryButtons{
-  width: 13%;
+  width: 100%;
   display:flex;
   margin-top: 10px;
   flex-direction: row;
   justify-content: center;
   vertical-align: middle;
+  align-items: middle;
 }
-.signin{
-  padding: 16px 24px;
-  font-size: 18px;
+.btn{
+  padding: 8px 24px;
+  font-size: 14px;
   font-weight: bold;
   text-align: left;
   vertical-align: middle;
@@ -107,22 +117,8 @@ body{
   background-color: grey;
   color: #fff;
   border-radius: 10px;
-  flex-grow: 1;
-  width: fit-content;
-}
-
-.signup{
-  padding: 16px 24px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  vertical-align: middle;
-  line-height: 16px;
-  background-color: grey;
-  color: #fff;
-  border-radius: 10px;
-  flex-grow: 1;
-  width: fit-content;
+  align-self:auto;
+  width:min-content;
 }
 
 .erro{
@@ -132,4 +128,12 @@ body{
 
 .displaynone{
   display: none;
+}
+
+.response {
+  width: 80%;
+  padding: 0 10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:24px;
+  color: #222;
 }

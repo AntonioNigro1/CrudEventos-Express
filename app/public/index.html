@@ -13,17 +13,31 @@
   </div>
 
   <div class="wrapper">
-    <h1 class="eventos">Entre ou cadastre-se para ver Eventos</h1>
-    <form class="signinbox">
-      <input class="emailinput" placeholder="Endereço de Email" type="email" id="user_email" name="user_email" />
-      <input class="senhainput" placeholder="Senha" type="password" id="user_password" name="user_senha" />
-    </form>
-    <div class="entryButtons">
-      <button class="signin" onclick="location.href=''">Entrar</button>
-      <button class="signup" onclick="location.href='/cadastro'">Cadastrar</button>
-      <p id="erro" class="erro displaynone"></p>
+    <div class="menu">
+      <input class="btnmenu" id="signin" type="button" value="SignIn" />
+      <input class="btnmenu" id="signup" type="button" value="SignUp" />
+      <input class="btnmenu" id="criar displaynone" type="button" value="Criar" />
+      <input class="btnmenu" id="deletar displaynone" type="button" value="Deletar" />
+      <input class="btnmenu" id="ver displaynone" type="button" value="Ver" />
+      <input class="btnmenu" id="logout displaynone" type="button" value="Logout" />
     </div>
+    <h1 class="eventos">Entre para ver Eventos!</h1>
+
+    <form class="signinbox">
+      <input class="inputs displaynone" placeholder="Nome completo" type="nome" id="user_nome" name="user_nome" />
+      <input class="inputs" placeholder="Endereço de Email" type="email" id="user_email" name="user_email" />
+      <input class="inputs" placeholder="Senha" type="password" id="user_senha" name="user_senha" />
+      <input class="inputs displaynone" placeholder="Senha novamente" type="password" id="user_senha2"
+        name="user_senha2" />
+      <p id="erro" class="erro displaynone"></p>
+      <div class="entryButtons">
+        <input class="btn" id="enviar" type="button" value="Enviar!" />
+      </div>
+    </form>
+    <div class="response"></div>
   </div>
+  <script src="./scripts/login.js"></script>
+  <script src="./scripts/control.js"></script>
 </body>
 
 </html>
