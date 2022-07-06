@@ -12,7 +12,6 @@ import UserRouter from './app/route/UserRouter.js';
 import EventRouter from './app/route/EventRouter.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const router = express.Router();
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
@@ -35,7 +34,7 @@ app.use(morgan('tiny'));
 app.use(cors());
 
 //rotas
-app.use('/User', UserRouter);
+app.use('/Users', UserRouter);
 app.use('/Eventos', EventRouter);
 
 //criação do servidor
