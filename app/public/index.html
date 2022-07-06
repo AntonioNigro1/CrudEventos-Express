@@ -16,20 +16,23 @@
     <div class="menu">
       <input class="btnmenu" id="signin" type="button" value="SignIn" />
       <input class="btnmenu" id="signup" type="button" value="SignUp" />
-      <input class="btnmenu" id="criar displaynone" type="button" value="Criar" />
-      <input class="btnmenu" id="deletar displaynone" type="button" value="Deletar" />
-      <input class="btnmenu" id="verTodos displaynone" type="button" value="Ver Todos" />
-      <input class="btnmenu" id="Procurar displaynone" type="button" value="Procurar" />
-      <input class="btnmenu" id="logout displaynone" type="button" value="Logout" />
+      <input class="btnmenu displaynone" id="criar" type="button" value="Criar" />
+      <input class="btnmenu displaynone" id="deletar" type="button" value="Deletar" />
+      <input class="btnmenu displaynone" id="verTodos" type="button" value="Ver Todos" />
+      <input class="btnmenu displaynone" id="procurar" type="button" value="Procurar" />
+      <input class="btnmenu displaynone" id="logout" type="button" value="Logout" />
     </div>
     <h1 class="eventos">Entre para ver Eventos!</h1>
 
-    <form class="signinbox">
-      <input class="inputs displaynone" placeholder="Nome completo" type="nome" id="user_nome" name="user_nome" />
+    <form class="inputbox">
+      <input class="inputs displaynone" placeholder="Nome" type="nome" id="user_nome" name="user_nome" />
       <input class="inputs" placeholder="Endereço de Email" type="email" id="user_email" name="user_email" />
       <input class="inputs" placeholder="Senha" type="password" id="user_senha" name="user_senha" />
       <input class="inputs displaynone" placeholder="Senha novamente" type="password" id="user_senha2"
         name="user_senha2" />
+      <input class="inputs displaynone" placeholder="Data" type="date" id="event_date" name="event_date" />
+      <input class="inputs displaynone" placeholder="Duração em horas" type="text" id="event_dur" name="event_dur" />
+
       <p id="erro" class="erro displaynone"></p>
       <div class="entryButtons">
         <input class="btn" id="enviar" type="button" value="Enviar!" />

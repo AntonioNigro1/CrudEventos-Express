@@ -76,7 +76,7 @@ body{
   color: black;
 }
 
-.signinbox{
+.inputbox{
   width: 65%;
   flex-grow: 2;
 }
