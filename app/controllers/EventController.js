@@ -46,7 +46,7 @@ module.exports = {
     }
   },
   findIt: async (req, res) => {
-    const { nome, data } = req.body;
+    const nome = req.params.nome;
     try {
       const reply = await Evento.findOne({ nome: nome, data: data });
       if (reply != null) {

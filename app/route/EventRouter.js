@@ -4,6 +4,6 @@ const Event = require('../controllers/EventController.js');
 router.post('/add', Event.add);
 router.post('/delete', Event.delete);
 router.get('/showAll', Event.showAll);
-router.get('/find', Event.findIt);
+router.get('/find:nome', Event.findIt);
 
 export default router;

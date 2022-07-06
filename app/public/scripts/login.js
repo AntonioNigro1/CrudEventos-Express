@@ -54,7 +54,7 @@ enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput
         body: JSON.stringify({
           nome: nomeinput.value,
           email: emailinput.value,
-          senha: pswinput.value,
+          senha: pswinput.value
         })
       });
       if (!json.ok) {

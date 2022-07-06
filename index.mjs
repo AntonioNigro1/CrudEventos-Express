@@ -8,6 +8,9 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url'
 
+import UserRouter from './app/route/UserRouter.js';
+import EventRouter from './app/route/EventRouter.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const router = express.Router();
 const __dirname = path.dirname(__filename);
@@ -32,11 +35,9 @@ app.use(morgan('tiny'));
 app.use(cors());
 
 //rotas
-/*
-app.use('/Entrar', Ent_Router);
-app.use('/Cadastrar', Cad_Router);
-app.use('/Eventos', Event_Router);
-*/
+app.use('/User', UserRouter);
+app.use('/Eventos', EventRouter);
+
 //criação do servidor
 const PORT = process.env.PORT || 3000;
 http.createServer(app).listen(PORT);
