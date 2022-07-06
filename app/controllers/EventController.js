@@ -33,7 +33,6 @@ module.exports = {
     }
   },
   showAll: async (req, res) => {
-    const { nome, data, tempo } = req.body;
     try {
       const reply = await Evento.find({}).toArray();
       if (reply != null) {
@@ -47,7 +46,7 @@ module.exports = {
     }
   },
   findIt: async (req, res) => {
-    const { nome, data, tempo } = req.body;
+    const { nome, data } = req.body;
     try {
       const reply = await Evento.findOne({ nome: nome, data: data });
       if (reply != null) {
