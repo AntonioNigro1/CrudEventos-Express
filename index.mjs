@@ -11,6 +11,9 @@ import { fileURLToPath } from 'url'
 import UserRouter from './app/route/UserRouter.js';
 import EventRouter from './app/route/EventRouter.js';
 
+// Main App
+var app = express();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -23,13 +26,8 @@ mongoose.connect(process.env.DB_CONNECT,
   }
 );
 
-// Main App
-var app = express();
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./app/public'));
-app.use(cookieParser());
 app.use(morgan('tiny'));
 app.use(cors());
 

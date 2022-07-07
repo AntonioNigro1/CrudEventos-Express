@@ -1,6 +1,5 @@
 {
   "name": "desafiotokenlab",
-  "type": "module",
   "version": "1.0.0",
   "description": "A Crude API for events",
   "main": "index.mjs",
