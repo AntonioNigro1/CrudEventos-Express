@@ -1,10 +1,10 @@
-let criar = document.querySelector('#criar'),
+let create = document.querySelector('#criar'),
   deletar = document.querySelector('#deletar'),
   verTodos = document.querySelector('#verTodos'),
   procurar = document.querySelector('#procurar'),
   response = document.querySelector('.response');
 
-criar.addEventListener('click', async function (event_nome, event_date, event_dur) {
+create.addEventListener('click', async function (event_nome, event_date, event_dur) {
   event_nome = document.querySelector('#user_nome');
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');

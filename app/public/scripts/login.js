@@ -67,6 +67,5 @@ enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput
 
   }
   loginController();
-});
-
+})
 loginController();
