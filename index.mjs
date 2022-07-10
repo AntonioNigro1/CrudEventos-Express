@@ -33,7 +33,7 @@ app.use(cors());
 
 //rotas
 app.use('/Users', UserRouter);
-app.use('/Eventos', EventRouter);
+app.use('/Events', EventRouter);
 
 //criação do servidor
 const PORT = process.env.PORT || 3000;
