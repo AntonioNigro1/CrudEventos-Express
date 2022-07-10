@@ -1,3 +1,4 @@
+const { findOneAndRemove } = require('../models/Evento');
 const Evento = require('../models/Evento');
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
     const { nome, data } = req.body;
     try {
       // Search User
-      const reply = await remove({ nome: nome, data: data });
+      const reply = await findOneAndRemove({ nome: nome, data: data });
       console.log(reply);
       if (reply.deletedCount == 1) {
         res.status(200).json({ status: '200' });
@@ -34,7 +35,7 @@ module.exports = {
   },
   showAll: async (req, res) => {
     try {
-      const reply = await Evento.find({}).toArray();
+      const reply = await Evento.find({});
       console.log(reply);
       if (reply != null) {
         console.log(reply);
