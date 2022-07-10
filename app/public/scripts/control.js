@@ -11,7 +11,7 @@ var loginControl;
 async function loginController() {
   const token = localStorage.getItem("token");
   if (token != null) {
-    let reply = await fetch('' + token);
+    let reply = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/' + token);
     let obj = await reply.json();
     if (obj.status == 200) {
       localStorage.setItem('token', obj.token);

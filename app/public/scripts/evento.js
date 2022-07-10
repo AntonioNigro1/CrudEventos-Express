@@ -1,5 +1,5 @@
 let create = document.querySelector('#criar'),
-  deletar = document.querySelector('#deletar'),
+delete = document.querySelector('#deletar'),
   verTodos = document.querySelector('#verTodos'),
   procurar = document.querySelector('#procurar'),
   response = document.querySelector('.response');
@@ -28,7 +28,7 @@ create.addEventListener('click', async function (event_nome, event_date, event_d
   document.querySelector('#erro').classList.toggle('displaynone', false);
 })
 
-deletar.addEventListener('click', async function (event_nome, event_date, event_dur) {
+delete.addEventListener('click', async function (event_nome, event_date, event_dur) {
   event_nome = document.querySelector('#user_nome');
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
