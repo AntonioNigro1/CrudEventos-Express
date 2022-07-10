@@ -28,7 +28,7 @@ enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput
   pswinput = document.querySelector('#user_senha');
   pswinput2 = document.querySelector('#user_senha2');
   if (loginControl) {//login
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/signin', {
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -47,7 +47,7 @@ enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput
 
   } else {//cadastro
     if (verificaEmail(emailinput) && verificaSenha(pswinput)) {
-      const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/signup', {
+      const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/signup', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors',
