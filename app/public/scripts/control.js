@@ -6,28 +6,32 @@ var signin = document.querySelector('#signin'),
   procurar = document.querySelector('#procurar'),
   logout = document.querySelector('#logout');
 
-var loginControl;
+var loginControl = 1,
+  optionControl;
 
 async function loginController() {
   const token = localStorage.getItem("token");
   if (token != null) {
-    let reply = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/' + token);
-    let obj = await reply.json();
-    if (obj.status == 200) {
-      localStorage.setItem('token', obj.token);
-      document.querySelector('#criar').classList.toggle('displaynone', false);
-      document.querySelector('#deletar').classList.toggle('displaynone', false);
-      document.querySelector('#verTodos').classList.toggle('displaynone', false);
-      document.querySelector('#logout').classList.toggle('displaynone', false);
-      document.querySelector('.inputbox').classList.toggle('displaynone', true);
-      document.querySelector('#signin').classList.toggle('displaynone', true);
-      document.querySelector('#signup').classList.toggle('displaynone', true);
-    }
+    //let reply = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/' + token);
+    //let obj = await reply.json();
+    //if (obj.status == 200) {
+    //localStorage.setItem('token', obj.token);
+    document.querySelector('.eventos').innerHTML = "Bem vindo, selecione uma opção";
+    document.querySelector('#criar').classList.toggle('displaynone', false);
+    document.querySelector('#deletar').classList.toggle('displaynone', false);
+    document.querySelector('#verTodos').classList.toggle('displaynone', false);
+    document.querySelector('#logout').classList.toggle('displaynone', false);
+    document.querySelector('#procurar').classList.toggle('displaynone', false);
+    document.querySelector('.inputbox').classList.toggle('displaynone', true);
+    document.querySelector('#signin').classList.toggle('displaynone', true);
+    document.querySelector('#signup').classList.toggle('displaynone', true);
+    //}
   } else {
     document.querySelector('#criar').classList.toggle('displaynone', true);
     document.querySelector('#deletar').classList.toggle('displaynone', true);
     document.querySelector('#verTodos').classList.toggle('displaynone', true);
     document.querySelector('#logout').classList.toggle('displaynone', true);
+    document.querySelector('#procurar').classList.toggle('displaynone', true);
     document.querySelector('.inputbox').classList.toggle('displaynone', false);
     document.querySelector('#signin').classList.toggle('displaynone', false);
     document.querySelector('#signup').classList.toggle('displaynone', false);
@@ -52,6 +56,8 @@ signup.addEventListener('click', function () {
 });
 
 criar.addEventListener('click', function () {
+  optionControl = 1;
+  document.querySelector('.eventos').innerHTML = "Crie um evento";
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
@@ -63,6 +69,8 @@ criar.addEventListener('click', function () {
 });
 
 deletar.addEventListener('click', function () {
+  optionControl = 2;
+  document.querySelector('.eventos').innerHTML = "Delete um evento";
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
@@ -73,7 +81,21 @@ deletar.addEventListener('click', function () {
   document.querySelector('#enviar').classList.toggle('displaynone', false);
 });
 
+procurar.addEventListener('click', function () {
+  optionControl = 3;
+  document.querySelector('.eventos').innerHTML = "Digite o nome do evento";
+  document.querySelector('.inputbox').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome').classList.toggle('displaynone', false);
+  document.querySelector('#user_email').classList.toggle('displaynone', true);
+  document.querySelector('#user_senha').classList.toggle('displaynone', true);
+  document.querySelector('#user_senha2').classList.toggle('displaynone', true);
+  document.querySelector('#event_date').classList.toggle('displaynone', true);
+  document.querySelector('#event_dur').classList.toggle('displaynone', true);
+  document.querySelector('#enviar').classList.toggle('displaynone', false);
+});
+
 verTodos.addEventListener('click', function () {
+  document.querySelector('.eventos').innerHTML = "Eventos:";
   document.querySelector('.inputbox').classList.toggle('displaynone', true);
   document.querySelector('#user_nome').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
@@ -82,17 +104,6 @@ verTodos.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', true);
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', true);
-});
-
-procurar.addEventListener('click', function () {
-  document.querySelector('.inputbox').classList.toggle('displaynone', false);
-  document.querySelector('#user_nome').classList.toggle('displaynone', false);
-  document.querySelector('#user_email').classList.toggle('displaynone', true);
-  document.querySelector('#user_senha').classList.toggle('displaynone', true);
-  document.querySelector('#user_senha2').classList.toggle('displaynone', true);
-  document.querySelector('#event_date').classList.toggle('displaynone', false);
-  document.querySelector('#event_dur').classList.toggle('displaynone', true);
-  document.querySelector('#enviar').classList.toggle('displaynone', false);
 });
 
 logout.addEventListener('click', function () {
@@ -104,4 +115,7 @@ logout.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', true);
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#logout').classList.toggle('displaynone', true);
+  localStorage.removeItem('token');
+  loginController();
 });

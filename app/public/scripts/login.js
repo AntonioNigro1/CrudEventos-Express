@@ -1,4 +1,4 @@
-let enviar = document.querySelector('#enviar');
+var enviar = document.querySelector('#enviar');
 
 function verificaEmail(emailinput) {
   if (emailinput.value.indexOf("@") == -1 || emailinput.value.indexOf("@") == 0 ||
