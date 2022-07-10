@@ -134,7 +134,8 @@ body{
   background-color: #8193B2;
   display: flex;
   width: 80%;
-  height: 50%;
+  height: fit-content;
+  top: 40%;
   padding: 0 10%;
   justify-content: center;
   font-family: 'Times New Roman', Times, serif;

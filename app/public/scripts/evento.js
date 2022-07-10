@@ -44,14 +44,15 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
   else if (optionControl == 3) {//procurar
     const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/find' + event_nome.value);
     let obj = await reply.json();
+    console.log(obj);
     if (obj.status == 200) {
       let events = document.createElement("ol");
       let nome = document.createElement("li");
-      nome.innerHTML = obj.data[i].nome;
+      nome.innerHTML = obj.data.nome;
       let data = document.createElement("p");
-      data.innerHTML = obj.data[i].data;
+      data.innerHTML = obj.data.data;
       let tempo = document.createElement("p");
-      tempo.innerHTML = obj.data[i].tempo;
+      tempo.innerHTML = obj.data.tempo;
       data.appendChild(tempo);
       nome.appendChild(data);
       events.appendChild(nome);
@@ -70,6 +71,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
 
   const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/showAll');
   let obj = await reply.json();
+  console.log(obj);
   if (obj.status == 200) {
     let events = document.createElement("ol");
     for (let i = 0; i < obj.data.length; i++) {
