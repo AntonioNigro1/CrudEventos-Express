@@ -95,11 +95,11 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
       let data = document.createElement("p");
       data.innerHTML = "Data: " + obj.data[i].data;
       let inicio = document.createElement("p");
-      tempo.innerHTML = "Inicio: " + obj.data[i].inicio;
+      inicio.innerHTML = "Inicio: " + obj.data[i].inicio;
       let fim = document.createElement("p");
-      tempo.innerHTML = "Fim: " + obj.data[i].fim;
+      fim.innerHTML = "Fim: " + obj.data[i].fim;
       let descricao = document.createElement("p");
-      tempo.innerHTML = "Descricao: " + obj.data[i].descricao;
+      descricao.innerHTML = "Descricao: " + obj.data[i].descricao;
       fim.appendChild(descricao);
       inicio.appendChild(fim);
       data.appendChild(inicio);
