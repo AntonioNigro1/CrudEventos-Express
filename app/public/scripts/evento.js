@@ -18,7 +18,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_i
         data: event_date.value,
         inicio: event_ini.value,
         fim: event_fim.value,
-        descricao: event_desc.value
+        descricao: event_des.value
       })
 
     });
