@@ -9,7 +9,7 @@ criar.addEventListener('click', async function (event_nome, event_date, event_du
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
 
-  const json = await fetch('/add', {
+  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/add', {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     mode: 'cors',
@@ -33,7 +33,7 @@ deletar.addEventListener('click', async function (event_nome, event_date, event_
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
 
-  const json = await fetch('/delete', {
+  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/delete', {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     mode: 'cors',
@@ -57,7 +57,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
 
-  const json = await fetch('/showAll');
+  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/showAll');
   let obj = await reply.json();
   if (obj.status == 200) {
     let events = document.createElement("ol");
@@ -82,7 +82,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
 procurar.addEventListener('click', async function () {
   event_nome = document.querySelector('#user_nome').value();
 
-  const json = await fetch('/find' + event_nome);
+  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/find' + event_nome);
   let obj = await reply.json();
   if (obj.status == 200) {
     let events = document.createElement("ol");
