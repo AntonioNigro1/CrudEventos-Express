@@ -64,7 +64,7 @@ module.exports = {
     }
   },
   updateIt: async (req, res) => {
-    const { nome, nomeup, dataup, inicioup, fimup, descricaoup } = req.params.nome;
+    const { nome, nomeup, dataup, inicioup, fimup, descricaoup } = req.body;
     try {
       const reply = await Evento.findOneAndUpdate({ nome: nome }, { nome: nomeup, data: dataup, inicio: inicioup, fim: fimup, descricao: descricaoup });
       console.log(reply);
