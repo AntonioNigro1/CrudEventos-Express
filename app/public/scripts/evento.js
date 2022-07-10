@@ -1,3 +1,5 @@
+let response = document.querySelector('.response');
+
 enviar.addEventListener('click', async function (event_nome, event_date, event_dur) {
   event_nome = document.querySelector('#user_nome');
   event_date = document.querySelector('#event_date');
