@@ -131,7 +131,11 @@ body{
 }
 
 .response {
+  position: absolute;
+  background-color: #8193B2;
+  display: flex;
   width: 80%;
+  height: fit-content;
   padding: 0 10%;
   font-family: 'Times New Roman', Times, serif;
   font-size:24px;
