@@ -1,4 +1,4 @@
-let signin = document.querySelector('#signin'),
+var signin = document.querySelector('#signin'),
   signup = document.querySelector('#signup'),
   criar = document.querySelector('#criar'),
   deletar = document.querySelector('#deletar'),

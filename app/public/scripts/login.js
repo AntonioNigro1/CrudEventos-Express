@@ -11,10 +11,12 @@ function verificaEmail(emailinput) {
   }
 }
 
-function verificaSenha(pswinput) {
+function verificaSenha(pswinput, pswinput2) {
   senha = pswinput.value;
-
-  if (senha.length >= 3) return true;
+  senha2 = pswinput2.value;
+  if (senha == senha2) {
+    if (senha.length >= 3) return true;
+  }
   else {
     document.querySelector('#erro').innerHTML = "Erro, senha invalido";
     document.querySelector('#erro').classList.toggle('displaynone', false);
@@ -46,7 +48,7 @@ enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput
 
 
   } else {//cadastro
-    if (verificaEmail(emailinput) && verificaSenha(pswinput)) {
+    if (verificaEmail(emailinput) && verificaSenha(pswinput, pswinput2)) {
       const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/signup', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
