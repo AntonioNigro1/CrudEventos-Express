@@ -35,9 +35,7 @@ module.exports = {
   showAll: async (req, res) => {
     try {
       const reply = await Evento.find({});
-      console.log(reply);
       if (reply != null) {
-        console.log(reply);
         res.status(200).json({ status: '200', data: reply });
       } else {
         res.status(404).json({ status: '404', error: 'No Events Found' });
@@ -48,6 +46,7 @@ module.exports = {
   },
   findIt: async (req, res) => {
     const nome = req.params.nome;
+    console.log(nome);
     try {
       const reply = await Evento.findOne({ nome: nome });
       console.log(reply);
