@@ -69,7 +69,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
 
-  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/showAll');
+  const reply = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/showAll');
   let obj = await reply.json();
   console.log(obj);
   if (obj.status == 200) {
