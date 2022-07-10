@@ -25,6 +25,8 @@ async function loginController() {
     document.querySelector('.inputbox').classList.toggle('displaynone', true);
     document.querySelector('#signin').classList.toggle('displaynone', true);
     document.querySelector('#signup').classList.toggle('displaynone', true);
+    document.querySelector('#entrar').classList.toggle('displaynone', true);
+    document.querySelector('#enviar').classList.toggle('displaynone', false);
     //}
   } else {
     document.querySelector('#criar').classList.toggle('displaynone', true);
@@ -35,6 +37,8 @@ async function loginController() {
     document.querySelector('.inputbox').classList.toggle('displaynone', false);
     document.querySelector('#signin').classList.toggle('displaynone', false);
     document.querySelector('#signup').classList.toggle('displaynone', false);
+    document.querySelector('#entrar').classList.toggle('displaynone', false);
+    document.querySelector('#enviar').classList.toggle('displaynone', true);
   }
 }
 
@@ -44,7 +48,7 @@ signin.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Entre para ver Eventos!";
   document.querySelector('#user_nome').classList.toggle('displaynone', true);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);
-  document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#entrar').classList.toggle('displaynone', false);
 });
 
 signup.addEventListener('click', function () {
@@ -52,7 +56,7 @@ signup.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Cadastre-se!";
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
   document.querySelector('#user_senha2').classList.toggle('displaynone', false);
-  document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#entrar').classList.toggle('displaynone', false);
 });
 
 criar.addEventListener('click', function () {

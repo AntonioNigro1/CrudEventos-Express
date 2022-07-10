@@ -1,4 +1,5 @@
-var enviar = document.querySelector('#enviar');
+var enviar = document.querySelector('#enviar'),
+  entrar = document.querySelector('#entrar');
 
 function verificaEmail(emailinput) {
   if (emailinput.value.indexOf("@") == -1 || emailinput.value.indexOf("@") == 0 ||
@@ -24,7 +25,7 @@ function verificaSenha(pswinput, pswinput2) {
   }
 }
 
-enviar.addEventListener('click', async function (nomeinput, emailinput, pswinput, pswinput2) {
+entrar.addEventListener('click', async function (nomeinput, emailinput, pswinput, pswinput2) {
   nomeinput = document.querySelector('#user_nome');
   emailinput = document.querySelector('#user_email');
   pswinput = document.querySelector('#user_senha');
