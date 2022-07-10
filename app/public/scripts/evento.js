@@ -78,6 +78,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   if (obj.status == 200) {
     let events = document.createElement("ol");
     for (let i = 0; i < obj.data.length; i++) {
+      let box = document.createElement("div");
       let nome = document.createElement("p");
       nome.innerHTML = "Titulo: " + obj.data[i].nome;
       let data = document.createElement("p");
@@ -87,8 +88,10 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
       data.appendChild(tempo);
       nome.appendChild(data);
       events.appendChild(nome);
+      box.appendChild(events);
+      response.appendChild(box);
     }
-    response.appendChild(events);
+
   } else {
     document.querySelector('#erro').innerHTML = "404 no Events found";
     document.querySelector('#erro').classList.toggle('displaynone', false);
