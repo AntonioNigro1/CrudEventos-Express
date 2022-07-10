@@ -4,7 +4,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
   event_dur = document.querySelector('#event_dur');
 
   if (optionControl == 1) {//criar
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/add', {
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/User/add', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       mode: 'cors',
