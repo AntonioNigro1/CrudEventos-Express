@@ -5,13 +5,9 @@ const JWT_SECRET = 'TokenLab';
 module.exports = {
   get: async (req, res) => {
     var token = req.params.Token;
-    console.log('User Controller GET');
-    console.log(token);
     try {
       // Auth token
       const { email, count } = jwt.verify(token, JWT_SECRET);
-      console.log(email);
-
       // Search for user
       const reply = await User.find({ email: email });
       if (reply != null) {

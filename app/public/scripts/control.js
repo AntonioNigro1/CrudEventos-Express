@@ -17,7 +17,7 @@ async function loginController() {
       localStorage.setItem('token', obj.token);
       document.querySelector('#criar').classList.toggle('displaynone', false);
       document.querySelector('#deletar').classList.toggle('displaynone', false);
-      document.querySelector('#ver').classList.toggle('displaynone', false);
+      document.querySelector('#verTodos').classList.toggle('displaynone', false);
       document.querySelector('#logout').classList.toggle('displaynone', false);
       document.querySelector('.inputbox').classList.toggle('displaynone', true);
       document.querySelector('#signin').classList.toggle('displaynone', true);
@@ -26,7 +26,7 @@ async function loginController() {
   } else {
     document.querySelector('#criar').classList.toggle('displaynone', true);
     document.querySelector('#deletar').classList.toggle('displaynone', true);
-    document.querySelector('#ver').classList.toggle('displaynone', true);
+    document.querySelector('#verTodos').classList.toggle('displaynone', true);
     document.querySelector('#logout').classList.toggle('displaynone', true);
     document.querySelector('.inputbox').classList.toggle('displaynone', false);
     document.querySelector('#signin').classList.toggle('displaynone', false);
