@@ -42,7 +42,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
     document.querySelector('#erro').classList.toggle('displaynone', false);
   }
   else if (optionControl == 3) {//procurar
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/find' + event_nome);
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/find' + event_nome.value);
     let obj = await reply.json();
     if (obj.status == 200) {
       let events = document.createElement("ol");
