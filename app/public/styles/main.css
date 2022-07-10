@@ -132,7 +132,9 @@ body{
 .response {
   position: absolute;
   display: flex;
-  width: 80%;
+  width: fit-content;
+  background-color:#8193B2;
+  border-radius: 10px;
   height: fit-content;
   top: 40%;
   padding: 0 10%;
