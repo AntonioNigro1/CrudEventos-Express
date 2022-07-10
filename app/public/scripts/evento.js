@@ -95,6 +95,6 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   }
 });
 
-limpar.addEventListener('click' function () {
+limpar.addEventListener('click', function () {
   response.innerHTML = '';
-})
+});
