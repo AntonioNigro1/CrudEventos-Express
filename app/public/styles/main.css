@@ -1,6 +1,6 @@
 html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size:24px;
   color: #fff;
   text-decoration: none;
 }
@@ -131,7 +131,6 @@ body{
 
 .response {
   position: absolute;
-  background-color: #8193B2;
   display: flex;
   width: 80%;
   height: fit-content;

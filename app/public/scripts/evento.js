@@ -1,4 +1,5 @@
-let response = document.querySelector('.response');
+let response = document.querySelector('.response'),
+  limpar = document.querySelector('#limpar');
 
 enviar.addEventListener('click', async function (event_nome, event_date, event_dur) {
   event_nome = document.querySelector('#user_nome');
@@ -49,12 +50,12 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
     console.log(obj);
     if (obj.status == 200) {
       let events = document.createElement("ol");
-      let nome = document.createElement("li");
-      nome.innerHTML = obj.data.nome;
+      let nome = document.createElement("p");
+      nome.innerHTML = "Titulo: " + obj.data.nome;
       let data = document.createElement("p");
-      data.innerHTML = obj.data.data;
+      data.innerHTML = "Data: " + obj.data.data;
       let tempo = document.createElement("p");
-      tempo.innerHTML = obj.data.tempo;
+      tempo.innerHTML = "Duração(horas): " + obj.data.tempo;
       data.appendChild(tempo);
       nome.appendChild(data);
       events.appendChild(nome);
@@ -77,12 +78,12 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   if (obj.status == 200) {
     let events = document.createElement("ol");
     for (let i = 0; i < obj.data.length; i++) {
-      let nome = document.createElement("li");
-      nome.innerHTML = obj.data[i].nome;
+      let nome = document.createElement("p");
+      nome.innerHTML = "Titulo: " + obj.data[i].nome;
       let data = document.createElement("p");
-      data.innerHTML = obj.data[i].data;
+      data.innerHTML = "Data: " + obj.data[i].data;
       let tempo = document.createElement("p");
-      tempo.innerHTML = obj.data[i].tempo;
+      tempo.innerHTML = "Duração(horas): " + obj.data[i].tempo;
       data.appendChild(tempo);
       nome.appendChild(data);
       events.appendChild(nome);
@@ -93,3 +94,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
     document.querySelector('#erro').classList.toggle('displaynone', false);
   }
 });
+
+limpar.addEventListener('click' function () {
+  response.innerHTML = '';
+})

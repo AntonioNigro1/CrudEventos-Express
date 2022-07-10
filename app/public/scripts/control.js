@@ -71,7 +71,7 @@ criar.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', false);
   document.querySelector('#event_dur').classList.toggle('displaynone', false);
   document.querySelector('#enviar').classList.toggle('displaynone', false);
-
+  document.querySelector('#limpar').classList.toggle('displaynone', true);
 });
 
 deletar.addEventListener('click', function () {
@@ -86,6 +86,7 @@ deletar.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', false);
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#limpar').classList.toggle('displaynone', true);
 });
 
 procurar.addEventListener('click', function () {
@@ -100,6 +101,7 @@ procurar.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', true);
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#limpar').classList.toggle('displaynone', false);
 });
 
 verTodos.addEventListener('click', function () {
@@ -113,6 +115,7 @@ verTodos.addEventListener('click', function () {
   document.querySelector('#event_date').classList.toggle('displaynone', true);
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', true);
+  document.querySelector('#limpar').classList.toggle('displaynone', false);
 });
 
 logout.addEventListener('click', function () {
@@ -125,6 +128,7 @@ logout.addEventListener('click', function () {
   document.querySelector('#event_dur').classList.toggle('displaynone', true);
   document.querySelector('#enviar').classList.toggle('displaynone', false);
   document.querySelector('#logout').classList.toggle('displaynone', true);
+  document.querySelector('#limpar').classList.toggle('displaynone', true);
   localStorage.removeItem('token');
   loginController();
 });
