@@ -1,4 +1,3 @@
-const { findOneAndRemove } = require('../models/Evento');
 const Evento = require('../models/Evento');
 
 module.exports = {
@@ -21,7 +20,7 @@ module.exports = {
     const { nome, data } = req.body;
     try {
       // Search User
-      const reply = await findOneAndRemove({ nome: nome, data: data });
+      const reply = await Evento.findOneAndRemove({ nome: nome, data: data });
       console.log(reply);
       if (reply.deletedCount == 1) {
         res.status(200).json({ status: '200' });
@@ -50,7 +49,7 @@ module.exports = {
   findIt: async (req, res) => {
     const nome = req.params.nome;
     try {
-      const reply = await Evento.findOne({ nome: nome, data: data });
+      const reply = await Evento.findOne({ nome: nome });
       if (reply != null) {
         res.status(200).json({ status: '200', data: reply });
       } else {
