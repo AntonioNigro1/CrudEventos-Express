@@ -22,7 +22,7 @@ module.exports = {
       // Search User
       const reply = await Evento.findOneAndRemove({ nome: nome, data: data });
       console.log(reply);
-      if (reply.deletedCount == 1) {
+      if (reply != null) {
         res.status(200).json({ status: '200' });
       } else {
         res.status(404).json({ status: '404', error: '404 Event Not Found' });
@@ -50,9 +50,11 @@ module.exports = {
     const nome = req.params.nome;
     try {
       const reply = await Evento.findOne({ nome: nome });
+      console.log(reply);
       if (reply != null) {
         res.status(200).json({ status: '200', data: reply });
       } else {
+        document.querySelector('#erro').innerHTML = "Evento não encontrado";
         res.status(404).json({ status: '404', error: 'Event Not Found' });
       }
 
