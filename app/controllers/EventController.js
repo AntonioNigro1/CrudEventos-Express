@@ -20,7 +20,7 @@ module.exports = {
     const { nome, data } = req.body;
     try {
       // Search User
-      const reply = await deleteOne(Evento.find({ nome: nome, data: data }));
+      const reply = await remove({ nome: nome, data: data });
       console.log(reply);
       if (reply.deletedCount == 1) {
         res.status(200).json({ status: '200' });
@@ -35,6 +35,7 @@ module.exports = {
   showAll: async (req, res) => {
     try {
       const reply = await Evento.find({}).toArray();
+      console.log(reply);
       if (reply != null) {
         console.log(reply);
         res.status(200).json({ status: '200', data: reply });
