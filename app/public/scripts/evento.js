@@ -1,10 +1,12 @@
 let response = document.querySelector('.response'),
   limpar = document.querySelector('#limpar');
 
-enviar.addEventListener('click', async function (event_nome, event_date, event_dur) {
+enviar.addEventListener('click', async function (event_nome, event_date, event_ini, event_fim, event_des) {
   event_nome = document.querySelector('#user_nome');
   event_date = document.querySelector('#event_date');
-  event_dur = document.querySelector('#event_dur');
+  event_ini = document.querySelector('#event_ini');
+  event_fim = document.querySelector('#event_fim');
+  event_des = document.querySelector('#event_des');
 
   if (optionControl == 1) {//criar
     const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/add', {
@@ -14,7 +16,9 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
       body: JSON.stringify({
         nome: event_nome.value,
         data: event_date.value,
-        tempo: event_dur.value
+        inicio: event_ini.value,
+        fim: event_fim.value,
+        descricao: event_desc.value
       })
 
     });
@@ -32,8 +36,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
       mode: 'cors',
       body: JSON.stringify({
         nome: event_nome.value,
-        data: event_date.value,
-        tempo: event_dur.value
+        data: event_date.value
       })
 
     });
@@ -54,9 +57,15 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
       nome.innerHTML = "Titulo: " + obj.data.nome;
       let data = document.createElement("p");
       data.innerHTML = "Data: " + obj.data.data;
-      let tempo = document.createElement("p");
-      tempo.innerHTML = "Duração(horas): " + obj.data.tempo;
-      data.appendChild(tempo);
+      let inicio = document.createElement("p");
+      tempo.innerHTML = "Inicio: " + obj.data.inicio;
+      let fim = document.createElement("p");
+      tempo.innerHTML = "Fim: " + obj.data.fim;
+      let descricao = document.createElement("p");
+      tempo.innerHTML = "Descricao: " + obj.data.descricao;
+      fim.appendChild(descricao);
+      inicio.appendChild(fim);
+      data.appendChild(inicio);
       nome.appendChild(data);
       events.appendChild(nome);
       response.appendChild(events);
@@ -67,10 +76,12 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
   }
 })
 
-verTodos.addEventListener('click', async function (event_nome, event_date, event_dur) {
+verTodos.addEventListener('click', async function (event_nome, event_date, event_ini, event_fim, event_des) {
   event_nome = document.querySelector('#user_nome');
   event_date = document.querySelector('#event_date');
-  event_dur = document.querySelector('#event_dur');
+  event_ini = document.querySelector('#event_ini');
+  event_fim = document.querySelector('#event_fim');
+  event_des = document.querySelector('#event_des');
 
   const reply = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/showAll');
   let obj = await reply.json();
@@ -78,18 +89,23 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   if (obj.status == 200) {
     let events = document.createElement("ol");
     for (let i = 0; i < obj.data.length; i++) {
-      let box[] = document.createElement("div");
+      let events = document.createElement("ol");
       let nome = document.createElement("p");
       nome.innerHTML = "Titulo: " + obj.data[i].nome;
       let data = document.createElement("p");
       data.innerHTML = "Data: " + obj.data[i].data;
-      let tempo = document.createElement("p");
-      tempo.innerHTML = "Duração(horas): " + obj.data[i].tempo;
-      data.appendChild(tempo);
+      let inicio = document.createElement("p");
+      tempo.innerHTML = "Inicio: " + obj.data[i].inicio;
+      let fim = document.createElement("p");
+      tempo.innerHTML = "Fim: " + obj.data[i].fim;
+      let descricao = document.createElement("p");
+      tempo.innerHTML = "Descricao: " + obj.data[i].descricao;
+      fim.appendChild(descricao);
+      inicio.appendChild(fim);
+      data.appendChild(inicio);
       nome.appendChild(data);
       events.appendChild(nome);
-      box[i].appendChild(events);
-      response.appendChild(box[i]);
+      response.appendChild(events);
     }
 
   } else {
