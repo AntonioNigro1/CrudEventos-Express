@@ -4,7 +4,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
   event_dur = document.querySelector('#event_dur');
 
   if (optionControl == 1) {//criar
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/add', {
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/add', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       mode: 'cors',
@@ -23,7 +23,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
     document.querySelector('#erro').classList.toggle('displaynone', false);
   }
   else if (optionControl == 2) {//deletar
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/delete', {
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/delete', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       mode: 'cors',
@@ -42,7 +42,7 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_d
     document.querySelector('#erro').classList.toggle('displaynone', false);
   }
   else if (optionControl == 3) {//procurar
-    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/find' + event_nome);
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/find' + event_nome);
     let obj = await reply.json();
     if (obj.status == 200) {
       let events = document.createElement("ol");
@@ -68,7 +68,7 @@ verTodos.addEventListener('click', async function (event_nome, event_date, event
   event_date = document.querySelector('#event_date');
   event_dur = document.querySelector('#event_dur');
 
-  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Users/showAll');
+  const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/showAll');
   let obj = await reply.json();
   if (obj.status == 200) {
     let events = document.createElement("ol");
