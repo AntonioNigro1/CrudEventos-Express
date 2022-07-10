@@ -30,7 +30,7 @@ const eventSchema = new mongoose.Schema({
   },
 
   descricao: {
-    typw: 'string',
+    type: 'string',
     required: true,
     maxLength: 255,
     minLength: 1
