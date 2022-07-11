@@ -60,6 +60,7 @@ signup.addEventListener('click', function () {
 });
 
 criar.addEventListener('click', function () {
+  document.querySelector('.response').innerHTML = '';
   document.querySelector('#erro').innerHTML = '';
   optionControl = 1;
   document.querySelector('.eventos').innerHTML = "Crie um evento";
@@ -77,6 +78,7 @@ criar.addEventListener('click', function () {
 });
 
 deletar.addEventListener('click', function () {
+  document.querySelector('.response').innerHTML = '';
   document.querySelector('#erro').innerHTML = '';
   optionControl = 2;
   document.querySelector('.eventos').innerHTML = "Delete um evento";
@@ -94,6 +96,7 @@ deletar.addEventListener('click', function () {
 });
 
 procurar.addEventListener('click', function () {
+  document.querySelector('.response').innerHTML = '';
   document.querySelector('#erro').innerHTML = '';
   optionControl = 3;
   document.querySelector('.eventos').innerHTML = "Digite o nome do evento";
@@ -111,6 +114,7 @@ procurar.addEventListener('click', function () {
 });
 
 verTodos.addEventListener('click', function () {
+  document.querySelector('.response').innerHTML = '';
   document.querySelector('#erro').innerHTML = '';
   document.querySelector('.eventos').innerHTML = "Eventos:";
   document.querySelector('.inputbox').classList.toggle('displaynone', true);
@@ -127,6 +131,7 @@ verTodos.addEventListener('click', function () {
 });
 
 logout.addEventListener('click', function () {
+  document.querySelector('.response').innerHTML = '';
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', false);
