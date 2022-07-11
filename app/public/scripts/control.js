@@ -137,23 +137,23 @@ verTodos.addEventListener('click', function () {
   document.querySelector('#limpar').classList.toggle('displaynone', false);
 });
 
-update.addEventListener('click', function () 
-optionControl = 4;
-document.querySelector('.response').innerHTML = '';
-document.querySelector('#erro').innerHTML = '';
-document.querySelector('.eventos').innerHTML = "Digite as mudanças para o evento";
-document.querySelector('.inputbox').classList.toggle('displaynone', false);
-document.querySelector('#user_nome').classList.toggle('displaynone', false);
-document.querySelector('#user_nome2').classList.toggle('displaynone', false);
-document.querySelector('#user_email').classList.toggle('displaynone', true);
-document.querySelector('#user_senha').classList.toggle('displaynone', true);
-document.querySelector('#user_senha2').classList.toggle('displaynone', true);
-document.querySelector('#event_date').classList.toggle('displaynone', false);
-document.querySelector('#event_ini').classList.toggle('displaynone', false);
-document.querySelector('#event_fim').classList.toggle('displaynone', false);
-document.querySelector('#event_des').classList.toggle('displaynone', false);
-document.querySelector('#enviar').classList.toggle('displaynone', false);
-document.querySelector('#limpar').classList.toggle('displaynone', true);
+update.addEventListener('click', function () {
+  optionControl = 4;
+  document.querySelector('.response').innerHTML = '';
+  document.querySelector('#erro').innerHTML = '';
+  document.querySelector('.eventos').innerHTML = "Digite as mudanças para o evento";
+  document.querySelector('.inputbox').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', false);
+  document.querySelector('#user_email').classList.toggle('displaynone', true);
+  document.querySelector('#user_senha').classList.toggle('displaynone', true);
+  document.querySelector('#user_senha2').classList.toggle('displaynone', true);
+  document.querySelector('#event_date').classList.toggle('displaynone', false);
+  document.querySelector('#event_ini').classList.toggle('displaynone', false);
+  document.querySelector('#event_fim').classList.toggle('displaynone', false);
+  document.querySelector('#event_des').classList.toggle('displaynone', false);
+  document.querySelector('#enviar').classList.toggle('displaynone', false);
+  document.querySelector('#limpar').classList.toggle('displaynone', true);
 });
 
 logout.addEventListener('click', function () {
