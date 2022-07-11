@@ -77,7 +77,7 @@ body{
 
 .inputbox{
   width: 65%;
-  flex-grow: 2;
+  display: contents;
 }
 
 
@@ -94,7 +94,6 @@ body{
   color: #8193B2;
   border: 1px;
   border-radius: 10px;
-  flex-grow: 2;
 }
 
 .entryButtons{
@@ -122,7 +121,6 @@ body{
 
 .erro{
   background-color: #8193B2;
-  flex-grow: 1;
 }
 
 .displaynone{
