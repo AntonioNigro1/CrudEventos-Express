@@ -7,5 +7,6 @@ router.post('/add', Events.add);
 router.post('/delete', Events.delete);
 router.get('/showAll', Events.showAll);
 router.get('/find:nome', Events.findIt);
+router.post('/update', Events.updateIt);
 
 module.exports = router;

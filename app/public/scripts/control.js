@@ -4,7 +4,8 @@ var signin = document.querySelector('#signin'),
   deletar = document.querySelector('#deletar'),
   verTodos = document.querySelector('#verTodos'),
   procurar = document.querySelector('#procurar'),
-  logout = document.querySelector('#logout');
+  logout = document.querySelector('#logout'),
+  update = document.querySelector('#update');
 
 var loginControl = 1,
   optionControl;
@@ -22,6 +23,7 @@ async function loginController() {
     document.querySelector('#verTodos').classList.toggle('displaynone', false);
     document.querySelector('#logout').classList.toggle('displaynone', false);
     document.querySelector('#procurar').classList.toggle('displaynone', false);
+    document.querySelector('#update').classList.toggle('displaynone', false);
     document.querySelector('.inputbox').classList.toggle('displaynone', true);
     document.querySelector('#signin').classList.toggle('displaynone', true);
     document.querySelector('#signup').classList.toggle('displaynone', true);
@@ -34,6 +36,7 @@ async function loginController() {
     document.querySelector('#verTodos').classList.toggle('displaynone', true);
     document.querySelector('#logout').classList.toggle('displaynone', true);
     document.querySelector('#procurar').classList.toggle('displaynone', true);
+    document.querySelector('#update').classList.toggle('displaynone', true);
     document.querySelector('.inputbox').classList.toggle('displaynone', false);
     document.querySelector('#signin').classList.toggle('displaynone', false);
     document.querySelector('#signup').classList.toggle('displaynone', false);
@@ -66,6 +69,7 @@ criar.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Crie um evento";
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
   document.querySelector('#user_senha').classList.toggle('displaynone', true);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);
@@ -84,6 +88,7 @@ deletar.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Delete um evento";
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
   document.querySelector('#user_senha').classList.toggle('displaynone', true);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);
@@ -102,6 +107,7 @@ procurar.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Digite o nome do evento";
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', false);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
   document.querySelector('#user_senha').classList.toggle('displaynone', true);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);
@@ -119,6 +125,7 @@ verTodos.addEventListener('click', function () {
   document.querySelector('.eventos').innerHTML = "Eventos:";
   document.querySelector('.inputbox').classList.toggle('displaynone', true);
   document.querySelector('#user_nome').classList.toggle('displaynone', true);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', true);
   document.querySelector('#user_senha').classList.toggle('displaynone', true);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);
@@ -130,10 +137,30 @@ verTodos.addEventListener('click', function () {
   document.querySelector('#limpar').classList.toggle('displaynone', false);
 });
 
+update.addEventListener('click', function () 
+optionControl = 4;
+document.querySelector('.response').innerHTML = '';
+document.querySelector('#erro').innerHTML = '';
+document.querySelector('.eventos').innerHTML = "Digite as mudanças para o evento";
+document.querySelector('.inputbox').classList.toggle('displaynone', false);
+document.querySelector('#user_nome').classList.toggle('displaynone', false);
+document.querySelector('#user_nome2').classList.toggle('displaynone', false);
+document.querySelector('#user_email').classList.toggle('displaynone', true);
+document.querySelector('#user_senha').classList.toggle('displaynone', true);
+document.querySelector('#user_senha2').classList.toggle('displaynone', true);
+document.querySelector('#event_date').classList.toggle('displaynone', false);
+document.querySelector('#event_ini').classList.toggle('displaynone', false);
+document.querySelector('#event_fim').classList.toggle('displaynone', false);
+document.querySelector('#event_des').classList.toggle('displaynone', false);
+document.querySelector('#enviar').classList.toggle('displaynone', false);
+document.querySelector('#limpar').classList.toggle('displaynone', true);
+});
+
 logout.addEventListener('click', function () {
   document.querySelector('.response').innerHTML = '';
   document.querySelector('.inputbox').classList.toggle('displaynone', false);
   document.querySelector('#user_nome').classList.toggle('displaynone', true);
+  document.querySelector('#user_nome2').classList.toggle('displaynone', true);
   document.querySelector('#user_email').classList.toggle('displaynone', false);
   document.querySelector('#user_senha').classList.toggle('displaynone', false);
   document.querySelector('#user_senha2').classList.toggle('displaynone', true);

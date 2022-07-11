@@ -1,8 +1,9 @@
 let response = document.querySelector('.response'),
   limpar = document.querySelector('#limpar');
 
-enviar.addEventListener('click', async function (event_nome, event_date, event_ini, event_fim, event_des) {
+enviar.addEventListener('click', async function (event_nome, event_nome2, event_date, event_ini, event_fim, event_des) {
   event_nome = document.querySelector('#user_nome');
+  event_nome2 = document.querySelector('#user_nome2');
   event_date = document.querySelector('#event_date');
   event_ini = document.querySelector('#event_ini');
   event_fim = document.querySelector('#event_fim');
@@ -73,6 +74,28 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_i
       document.querySelector('#erro').innerHTML = "404 Event not found";
       document.querySelector('#erro').classList.toggle('displaynone', false);
     }
+  }
+  else if (optionControl == 4) {//update
+    const json = await fetch('https://peaceful-ridge-61933.herokuapp.com/Events/update', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'cors',
+      body: JSON.stringify({
+        nome: event_nome.value,
+        nomeup: event_nome2.value,
+        dataup: event_date.value,
+        inicioup: event_ini.value,
+        fimup: event_fim.value,
+        descricaoup: event_des.value
+      })
+
+    });
+    if (!json.ok) {
+      document.querySelector('#erro').innerHTML = "Erro atualizar evento";
+    } else {
+      document.querySelector('#erro').innerHTML = "Evento atualizado com sucesso";
+    }
+    document.querySelector('#erro').classList.toggle('displaynone', false);
   }
 })
 
