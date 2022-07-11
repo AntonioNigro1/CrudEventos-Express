@@ -58,11 +58,11 @@ enviar.addEventListener('click', async function (event_nome, event_date, event_i
       let data = document.createElement("p");
       data.innerHTML = "Data: " + obj.data.data;
       let inicio = document.createElement("p");
-      tempo.innerHTML = "Inicio: " + obj.data.inicio;
+      inicio.innerHTML = "Inicio: " + obj.data.inicio;
       let fim = document.createElement("p");
-      tempo.innerHTML = "Fim: " + obj.data.fim;
+      fim.innerHTML = "Fim: " + obj.data.fim;
       let descricao = document.createElement("p");
-      tempo.innerHTML = "Descricao: " + obj.data.descricao;
+      descricao.innerHTML = "Descricao: " + obj.data.descricao;
       fim.appendChild(descricao);
       inicio.appendChild(fim);
       data.appendChild(inicio);
